@@ -1,0 +1,24 @@
+= render 'shared/side_bar'
+
+.chat-main
+  .chat-main__header
+    .chat-main__header--name
+      = @group.name
+    .chat-main__header--edit-btn
+      = link_to 'edit', edit_group_path(@group.id)
+    .chat-main__header--members
+      Menber:
+      - @group.users.each do |user|
+        = user.name
+  .chat-main__body
+    = render partial: 'message', collection: @messages, as: :message
+  #chat-main__body
+  .chat-main__footer
+    = form_for [@group, @message], id:'new_message' do |f|
+      = f.text_field :content, class: 'chat-main__footer-message', placeholder: 'type a message', id:'textbox'
+      .chat-main__footer-message--image
+        = f.label :image, class: 'chat-main__footer-message--image' do
+          = fa_icon 'image', class: 'icon'
+          = f.file_field :image, class: 'file'
+      = f.submit 'Send', class: 'chat-main__footer--send'
+
