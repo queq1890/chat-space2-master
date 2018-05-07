@@ -1,7 +1,7 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.10.2"
 
-set :application, 'chat-space2'
+set :application, 'chat-space2-master'
 set :repo_url,  'git@github.com:queq1890/chat-space2-master.git'
 
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
