@@ -69,3 +69,4 @@ gem 'pry-rails'
 gem 'carrierwave'
 gem 'fog'
 gem 'mini_magick'
+gem 'deathnote', require: false
